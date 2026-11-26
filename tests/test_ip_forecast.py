@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 
+import numpy as np
 import torch
 
 from data.tokamark_robustness_loader import timeseries_to_multipatch
@@ -24,6 +25,23 @@ def test_full_window_becomes_channel_patches() -> None:
     assert qids.shape == (patches.shape[0],)
     assert valid.shape == (patches.shape[0],)
     assert int(valid.sum()) == patches.shape[0]
+
+
+def test_shot_alarm_sweep_counts_warning_before_t_cut() -> None:
+    import scripts.eval_shot_alarms as alarms
+
+    sweep = alarms.sweep
+
+    samples = [
+        {"shot_id": 1, "t_cut": 1.0, "input": {"ip": {"time": np.linspace(0.0, 0.2, 8)}}},
+        {"shot_id": 1, "t_cut": 1.0, "input": {"ip": {"time": np.linspace(0.2, 0.4, 8)}}},
+        {"shot_id": 2, "t_cut": 1.0, "input": {"ip": {"time": np.linspace(0.0, 0.9, 8)}}},
+    ]
+    # Shot 1 drops early. Shot 2 stays flat, so no alarm before t_cut at a high threshold.
+    metrics = sweep(samples, np.array([1.0, 0.2, 1.0]))
+    assert metrics["n_shots"] == 2.0
+    assert metrics["far"] is None
+    assert 0.0 <= metrics["tpr"] <= 1.0
 
 
 def test_forward_ip_is_scalar_per_batch() -> None:

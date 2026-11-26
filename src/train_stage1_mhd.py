@@ -103,31 +103,41 @@ def train(args: argparse.Namespace) -> None:
     lcfg = cfg["loss"]
     tubelet = tuple(mcfg.get("tubelet", [1, 16, 16, 16]))
 
-    try:
-        from data.well_mhd_loader import MHD64ChannelFirstDataset, open_mhd_dataset
+    require_real = bool(getattr(args, "require_real", False))
+    dcfg = cfg["dataset"]
+    train_ds = None
+    use_synth = True
+    last_exc: Exception | None = None
+    for attempt in range(3):
+        try:
+            from data.well_mhd_loader import MHD64ChannelFirstDataset, open_mhd_dataset
 
-        dcfg = cfg["dataset"]
-        train_ds = MHD64ChannelFirstDataset(
-            open_mhd_dataset(
-                "train",
-                well_base_path=dcfg.get("well_base_path"),
-                well_dataset_name=dcfg.get("well_dataset_name", "MHD_64"),
-                n_steps_input=dcfg["n_steps_input"],
-                n_steps_output=dcfg.get("n_steps_output", 1),
-                use_normalization=dcfg.get("use_normalization", False),
+            train_ds = MHD64ChannelFirstDataset(
+                open_mhd_dataset(
+                    "train",
+                    well_base_path=dcfg.get("well_base_path"),
+                    well_dataset_name=dcfg.get("well_dataset_name", "MHD_64"),
+                    n_steps_input=dcfg["n_steps_input"],
+                    n_steps_output=dcfg.get("n_steps_output", 1),
+                    use_normalization=dcfg.get("use_normalization", False),
+                )
             )
-        )
-        use_synth = False
-    except Exception as exc:
-        print(f"MHD_64 unavailable ({exc}); using synthetic dataset.")
+            use_synth = False
+            break
+        except Exception as exc:
+            last_exc = exc
+            print(f"MHD_64 open attempt {attempt + 1}/3 failed: {exc}")
+    if use_synth:
+        if require_real:
+            raise SystemExit(f"Real MHD_64 required but unavailable: {last_exc}")
+        print(f"MHD_64 unavailable ({last_exc}); using synthetic dataset.")
         train_ds = SyntheticMHD64Dataset()
-        use_synth = True
 
     nw = cfg["dataset"].get("num_workers", 0)
     loader = DataLoader(
         train_ds,
         batch_size=cfg["dataset"]["batch_size"],
-        shuffle=True,
+        shuffle=bool(dcfg.get("shuffle", not use_synth)),
         **dataloader_kwargs(device, nw),
     )
 
@@ -238,6 +248,11 @@ def main() -> None:
     parser.add_argument("--amp", action="store_true", help="Mixed precision on CUDA (recommended on GPU)")
     parser.add_argument("--skip_rollout", action="store_true", help="Skip autoregressive rollout logging (saves VRAM)")
     parser.add_argument("--refit_variance", action="store_true", help="Recompute channel_var.json from streaming data")
+    parser.add_argument(
+        "--require-real",
+        action="store_true",
+        help="Exit if MHD_64 cannot be opened. Do not train on the synthetic cube.",
+    )
     add_device_arg(parser)
     args = parser.parse_args()
     train(args)

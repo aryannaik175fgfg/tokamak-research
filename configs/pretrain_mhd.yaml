@@ -9,6 +9,8 @@ dataset:
   use_normalization: false
   batch_size: 1
   num_workers: 0
+  # Sequential reads. Random shuffle on a streamed cube is much slower than the GPU step.
+  shuffle: false
 
 model:
   d_model: 256
@@ -35,4 +37,4 @@ log:
   rollout_steps: 5
   checkpoint_dir: "runs/stage1_mhd"
   # HF streaming: keep small so training starts quickly on limited disk/GPU.
-  variance_fit_batches: 5
+  variance_fit_batches: 2
