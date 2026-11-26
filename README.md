@@ -2,7 +2,7 @@
 
 Short-horizon forecaster: **600 timesteps × 18 diagnostic channels → normalized plasma current 100 ms ahead**.
 
-The number this repo can stand behind is **clean test NRMSE ≈ 0.478** on the [TokaMark robustness subset](https://huggingface.co/datasets/Neerav-Gupta/tokamark-robustness-data), next to the published Transformer (**0.470**) and LSTM (**0.496**) on the same task. Reproduce it with the commands below after downloading the subset. Weights are not in git; they are attached to a GitHub Release when one has been published (`stage2-ip`).
+The number this repo can stand behind is **clean test NRMSE ≈ 0.478** on the [TokaMark robustness subset](https://huggingface.co/datasets/Neerav-Gupta/tokamark-robustness-data), next to the published Transformer (**0.470**) and LSTM (**0.496**) on the same task. Reproduce it with the commands below after downloading the subset. Weights are not in git. Download `best.pt` from the [stage2-ip release](https://github.com/aryannaik175fgfg/tokamak-research/releases/tag/stage2-ip) into `runs/stage2_ip/`.
 
 This is **not** a cross-machine disruption alarm. Shot-level true-positive rate needs disruption timestamps (`t_cut`) that are not in the default download. MHD pretraining on The Well `MHD_64` is implemented and **not** part of the reported score (`configs/train_tokamark_ip.yaml` sets `use_mhd_pretrain: false`). A finished stage-1 run on real MHD_64 is still outstanding: the last local attempt fell back to a synthetic cube after a Hugging Face timeout.
 
