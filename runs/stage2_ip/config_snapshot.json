@@ -1,0 +1,39 @@
+{
+  "device": "auto",
+  "amp": true,
+  "dataset": {
+    "task": "ip_regression",
+    "tokamark_robustness_path": "data/tokamark_subset",
+    "itpa_globals_path": "data/itpa/HDB5V2.3.xlsx",
+    "label_file": "y",
+    "patch_len": 8,
+    "time_stride": 49,
+    "batch_size": 256,
+    "num_workers": 2
+  },
+  "model": {
+    "d_model": 256,
+    "n_layers": 6,
+    "n_heads": 8,
+    "mlp_ratio": 4.0,
+    "patch_len": 8,
+    "n_reactor_ctx": 4,
+    "n_rho": 32
+  },
+  "optim": {
+    "lr": 0.0016,
+    "encoder_lr_scale": 0.1,
+    "weight_decay": 0.01,
+    "epochs": 30,
+    "stage1_checkpoint": "runs/stage1_mhd/stage1_last.pt"
+  },
+  "flags": {
+    "use_mhd_pretrain": false,
+    "use_itpa_conditioning": true
+  },
+  "log": {
+    "checkpoint_dir": "runs/stage2_ip",
+    "metrics_csv": "metrics.csv",
+    "train_log": "train.log"
+  }
+}

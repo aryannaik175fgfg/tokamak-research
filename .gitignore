@@ -1,0 +1,45 @@
+# Environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Data & caches (download via scripts/ — do not commit)
+data/**
+!data/README.md
+!data/paths.yaml
+!data/**/MANUAL.txt
+!data/tokamark_subset/README.md
+!data/tokamark_subset/results/*.json
+data/**/*.tar
+data/**/*.tar.*
+data/**/hf_cache/
+data/itpa/*.csv
+data/itpa/*.xlsx
+
+# Training outputs (optional: commit small reports, not weights)
+runs/**/*.pt
+runs/**/plots/*.png
+
+# Keep CSV/MD/JSON logs if you want them tracked — uncomment to ignore:
+# runs/
+
+# Secrets
+.env
+.env.*
+*.pem
+wandb/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Large HF artifacts inside repo copy
+**/test_raw_samples.pkl
+
+# Windows
+*.lnk

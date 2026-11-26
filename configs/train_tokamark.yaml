@@ -1,0 +1,51 @@
+# Legacy disruption / focal path. For TokaMark robustness Ip regression use configs/train_tokamark_ip.yaml
+device: auto
+amp: false
+
+dataset:
+  task: disruption
+  # Full zarr tree is optional; training uses tokamark_robustness_path when set (~650 MB).
+  mast_local_path: null
+  tokamark_robustness_path: data/tokamark_subset
+  tokamark_task_disruption: "task_4-1"
+  tokamark_task_magnetics: "task_1-1"
+  itpa_globals_path: data/itpa/HDB5V2.3.xlsx
+  itpa_pr08_path: null
+  horizons_ms: [10, 25, 50, 100]
+  batch_size_mast: 4
+  batch_size_itpa: 4
+  num_workers: 0
+
+model:
+  d_model: 256
+  n_layers: 6
+  n_heads: 8
+  mlp_ratio: 4.0
+  patch_len: 8
+  n_reactor_ctx: 4
+  n_rho: 32
+
+loss:
+  focal_alpha: 0.75
+  focal_gamma: 2.0
+  lambda_mono: 1.0
+  lambda_prof: 1.0
+  lead_time_tau_ms: 50.0
+  lead_time_ref_ms: 20.0
+  lead_time_clip: [0.05, 5.0]
+
+optim:
+  lr: 1.0e-4
+  encoder_lr_scale: 0.1
+  weight_decay: 0.01
+  max_steps: null
+  stage1_checkpoint: "runs/stage1_mhd/stage1_last.pt"
+  max_steps: 200
+
+flags:
+  use_mhd_pretrain: true
+  use_itpa_conditioning: true
+  use_physics_loss: true
+
+log:
+  checkpoint_dir: "runs/stage2_tokamark"

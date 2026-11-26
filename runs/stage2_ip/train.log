@@ -1,0 +1,79 @@
+# tokamak training started 2026-11-24 13:29:12 UTC
+[2026-11-24 13:29:12 UTC] task=ip_regression train=9950 val=2500 batch=4 tokens_per_sample~234
+[2026-11-24 13:31:47 UTC] epoch=1 lr=0.000300 train_mse=0.154697 val_mae=0.265859 val_mse=0.128286 val_r2=0.703720
+[2026-11-24 13:31:47 UTC] new best val_mse=0.128286 -> best.pt
+[2026-11-24 13:31:47 UTC] finished 1 epochs; best val_mse=0.128286
+[2026-11-24 13:32:37 UTC] task=ip_regression train=9950 val=2500 batch=8 tokens_per_sample~234
+[2026-11-24 13:34:03 UTC] epoch=1 lr=0.000300 train_mse=0.194692 val_mae=0.213948 val_mse=0.108890 val_r2=0.748516
+[2026-11-24 13:34:04 UTC] new best val_mse=0.108890 -> best.pt
+[2026-11-24 13:35:30 UTC] epoch=2 lr=0.000300 train_mse=0.084036 val_mae=0.188041 val_mse=0.111119 val_r2=0.743367
+[2026-11-24 13:36:57 UTC] epoch=3 lr=0.000300 train_mse=0.070276 val_mae=0.215830 val_mse=0.107830 val_r2=0.750963
+[2026-11-24 13:36:57 UTC] new best val_mse=0.107830 -> best.pt
+[2026-11-24 13:38:23 UTC] epoch=4 lr=0.000300 train_mse=0.069139 val_mae=0.222007 val_mse=0.117146 val_r2=0.729449
+[2026-11-24 13:39:50 UTC] epoch=5 lr=0.000300 train_mse=0.061332 val_mae=0.216043 val_mse=0.123554 val_r2=0.714649
+[2026-11-24 13:41:16 UTC] epoch=6 lr=0.000300 train_mse=0.059528 val_mae=0.211513 val_mse=0.108598 val_r2=0.749191
+[2026-11-24 13:42:42 UTC] epoch=7 lr=0.000300 train_mse=0.056125 val_mae=0.194754 val_mse=0.109828 val_r2=0.746349
+[2026-11-24 13:44:05 UTC] epoch=8 lr=0.000300 train_mse=0.055144 val_mae=0.198750 val_mse=0.128970 val_r2=0.702141
+[2026-11-24 13:45:29 UTC] epoch=9 lr=0.000300 train_mse=0.053802 val_mae=0.221664 val_mse=0.119026 val_r2=0.725107
+[2026-11-24 13:46:50 UTC] epoch=10 lr=0.000300 train_mse=0.049920 val_mae=0.187051 val_mse=0.103297 val_r2=0.761432
+[2026-11-24 13:46:50 UTC] new best val_mse=0.103297 -> best.pt
+[2026-11-24 15:29:21 UTC] epoch=11 lr=0.000300 train_mse=0.045698 val_mae=0.219243 val_mse=0.110801 val_r2=0.744102
+[2026-11-24 15:30:55 UTC] epoch=12 lr=0.000300 train_mse=0.043726 val_mae=0.199278 val_mse=0.107588 val_r2=0.751521
+[2026-11-24 15:32:24 UTC] epoch=13 lr=0.000300 train_mse=0.041436 val_mae=0.208979 val_mse=0.131573 val_r2=0.696128
+[2026-11-24 15:33:56 UTC] epoch=14 lr=0.000300 train_mse=0.038355 val_mae=0.200843 val_mse=0.112447 val_r2=0.740301
+[2026-11-24 15:35:42 UTC] epoch=15 lr=0.000300 train_mse=0.043826 val_mae=0.188711 val_mse=0.118526 val_r2=0.726260
+[2026-11-24 15:37:19 UTC] epoch=16 lr=0.000300 train_mse=0.041012 val_mae=0.177389 val_mse=0.108873 val_r2=0.748555
+[2026-11-24 15:38:53 UTC] epoch=17 lr=0.000300 train_mse=0.039078 val_mae=0.210559 val_mse=0.124825 val_r2=0.711714
+[2026-11-24 15:40:29 UTC] epoch=18 lr=0.000300 train_mse=0.036108 val_mae=0.178613 val_mse=0.121542 val_r2=0.719296
+[2026-11-24 15:42:05 UTC] epoch=19 lr=0.000300 train_mse=0.033534 val_mae=0.183735 val_mse=0.113957 val_r2=0.736813
+[2026-11-24 15:43:36 UTC] epoch=20 lr=0.000300 train_mse=0.033471 val_mae=0.208270 val_mse=0.124389 val_r2=0.712720
+[2026-11-24 15:45:03 UTC] epoch=21 lr=0.000300 train_mse=0.030413 val_mae=0.191221 val_mse=0.115623 val_r2=0.732966
+[2026-11-24 15:46:30 UTC] epoch=22 lr=0.000300 train_mse=0.033425 val_mae=0.192905 val_mse=0.112240 val_r2=0.740778
+[2026-11-24 15:48:02 UTC] epoch=23 lr=0.000300 train_mse=0.033491 val_mae=0.228793 val_mse=0.135753 val_r2=0.686474
+[2026-11-24 15:49:37 UTC] epoch=24 lr=0.000300 train_mse=0.030632 val_mae=0.214837 val_mse=0.145609 val_r2=0.663711
+[2026-11-24 15:51:20 UTC] epoch=25 lr=0.000300 train_mse=0.033852 val_mae=0.178118 val_mse=0.105409 val_r2=0.756554
+[2026-11-24 15:52:55 UTC] epoch=26 lr=0.000300 train_mse=0.031987 val_mae=0.197120 val_mse=0.114922 val_r2=0.734584
+[2026-11-24 15:54:30 UTC] epoch=27 lr=0.000300 train_mse=0.035345 val_mae=0.185564 val_mse=0.116315 val_r2=0.731368
+[2026-11-24 15:56:13 UTC] epoch=28 lr=0.000300 train_mse=0.031794 val_mae=0.201314 val_mse=0.114408 val_r2=0.735772
+[2026-11-24 15:58:00 UTC] epoch=29 lr=0.000300 train_mse=0.032197 val_mae=0.197525 val_mse=0.135691 val_r2=0.686617
+[2026-11-24 15:59:33 UTC] epoch=30 lr=0.000300 train_mse=0.029219 val_mae=0.195169 val_mse=0.122629 val_r2=0.716784
+[2026-11-24 15:59:33 UTC] finished 30 epochs; best val_mse=0.103297
+[2026-11-24 16:01:12 UTC] task=ip_regression train=9950 val=2500 batch=256 steps_per_epoch=39 tokens_per_sample~234
+[2026-11-24 16:01:23 UTC] cuda_warmup batch=1 reserved_MB=140
+[2026-11-24 16:01:59 UTC] epoch=1 lr=0.001600 train_mse=0.078934 val_mae=0.202236 val_mse=0.113091 val_r2=0.738813 vram_reserved_mb=4140.000000
+[2026-11-24 16:01:59 UTC] new best val_mse=0.113091 -> best.pt
+[2026-11-24 16:02:24 UTC] epoch=2 lr=0.001600 train_mse=0.037235 val_mae=0.185992 val_mse=0.117218 val_r2=0.729281 vram_reserved_mb=4140.000000
+[2026-11-24 16:02:48 UTC] epoch=3 lr=0.001600 train_mse=0.034189 val_mae=0.203931 val_mse=0.112428 val_r2=0.740345 vram_reserved_mb=4140.000000
+[2026-11-24 16:02:49 UTC] new best val_mse=0.112428 -> best.pt
+[2026-11-24 16:03:13 UTC] epoch=4 lr=0.001600 train_mse=0.033695 val_mae=0.182484 val_mse=0.111852 val_r2=0.741675 vram_reserved_mb=4140.000000
+[2026-11-24 16:03:13 UTC] new best val_mse=0.111852 -> best.pt
+[2026-11-24 16:03:37 UTC] epoch=5 lr=0.001600 train_mse=0.040420 val_mae=0.186271 val_mse=0.111767 val_r2=0.741871 vram_reserved_mb=4140.000000
+[2026-11-24 16:03:38 UTC] new best val_mse=0.111767 -> best.pt
+[2026-11-24 16:04:02 UTC] epoch=6 lr=0.001600 train_mse=0.035174 val_mae=0.190778 val_mse=0.119448 val_r2=0.724131 vram_reserved_mb=4140.000000
+[2026-11-24 16:04:26 UTC] epoch=7 lr=0.001600 train_mse=0.036240 val_mae=0.196324 val_mse=0.116640 val_r2=0.730618 vram_reserved_mb=4140.000000
+[2026-11-24 16:04:50 UTC] epoch=8 lr=0.001600 train_mse=0.034070 val_mae=0.198856 val_mse=0.112122 val_r2=0.741050 vram_reserved_mb=4140.000000
+[2026-11-24 16:05:15 UTC] epoch=9 lr=0.001600 train_mse=0.039465 val_mae=0.182905 val_mse=0.110073 val_r2=0.745783 vram_reserved_mb=4140.000000
+[2026-11-24 16:05:15 UTC] new best val_mse=0.110073 -> best.pt
+[2026-11-24 16:05:39 UTC] epoch=10 lr=0.001600 train_mse=0.050925 val_mae=0.183453 val_mse=0.116060 val_r2=0.731955 vram_reserved_mb=4140.000000
+[2026-11-24 16:06:04 UTC] epoch=11 lr=0.001600 train_mse=0.040681 val_mae=0.195480 val_mse=0.126837 val_r2=0.707065 vram_reserved_mb=4140.000000
+[2026-11-24 16:06:29 UTC] epoch=12 lr=0.001600 train_mse=0.033086 val_mae=0.187740 val_mse=0.117332 val_r2=0.729018 vram_reserved_mb=4140.000000
+[2026-11-24 16:06:53 UTC] epoch=13 lr=0.001600 train_mse=0.036479 val_mae=0.190834 val_mse=0.104356 val_r2=0.758988 vram_reserved_mb=4140.000000
+[2026-11-24 16:06:54 UTC] new best val_mse=0.104356 -> best.pt
+[2026-11-24 16:07:17 UTC] epoch=14 lr=0.001600 train_mse=0.032783 val_mae=0.174692 val_mse=0.114377 val_r2=0.735842 vram_reserved_mb=4140.000000
+[2026-11-24 16:07:41 UTC] epoch=15 lr=0.001600 train_mse=0.028405 val_mae=0.203857 val_mse=0.137030 val_r2=0.683525 vram_reserved_mb=4140.000000
+[2026-11-24 16:08:05 UTC] epoch=16 lr=0.001600 train_mse=0.042478 val_mae=0.196799 val_mse=0.112026 val_r2=0.741274 vram_reserved_mb=4140.000000
+[2026-11-24 16:08:29 UTC] epoch=17 lr=0.001600 train_mse=0.038617 val_mae=0.179250 val_mse=0.111151 val_r2=0.743293 vram_reserved_mb=4140.000000
+[2026-11-24 16:08:52 UTC] epoch=18 lr=0.001600 train_mse=0.031604 val_mae=0.202867 val_mse=0.130844 val_r2=0.697813 vram_reserved_mb=4140.000000
+[2026-11-24 16:09:16 UTC] epoch=19 lr=0.001600 train_mse=0.028837 val_mae=0.188362 val_mse=0.125928 val_r2=0.709166 vram_reserved_mb=4140.000000
+[2026-11-24 16:09:40 UTC] epoch=20 lr=0.001600 train_mse=0.030647 val_mae=0.194045 val_mse=0.124735 val_r2=0.711922 vram_reserved_mb=4140.000000
+[2026-11-24 16:10:04 UTC] epoch=21 lr=0.001600 train_mse=0.032573 val_mae=0.266268 val_mse=0.129313 val_r2=0.701348 vram_reserved_mb=4140.000000
+[2026-11-24 16:10:27 UTC] epoch=22 lr=0.001600 train_mse=0.051857 val_mae=0.189296 val_mse=0.124394 val_r2=0.712708 vram_reserved_mb=4140.000000
+[2026-11-24 16:10:52 UTC] epoch=23 lr=0.001600 train_mse=0.040466 val_mae=0.198995 val_mse=0.109596 val_r2=0.746885 vram_reserved_mb=4140.000000
+[2026-11-24 16:11:15 UTC] epoch=24 lr=0.001600 train_mse=0.036791 val_mae=0.203021 val_mse=0.133134 val_r2=0.692523 vram_reserved_mb=4140.000000
+[2026-11-24 16:11:39 UTC] epoch=25 lr=0.001600 train_mse=0.035126 val_mae=0.189763 val_mse=0.123483 val_r2=0.714813 vram_reserved_mb=4140.000000
+[2026-11-24 16:12:03 UTC] epoch=26 lr=0.001600 train_mse=0.035811 val_mae=0.218777 val_mse=0.139541 val_r2=0.677726 vram_reserved_mb=4140.000000
+[2026-11-24 16:12:27 UTC] epoch=27 lr=0.001600 train_mse=0.062022 val_mae=0.209122 val_mse=0.137910 val_r2=0.681493 vram_reserved_mb=4140.000000
+[2026-11-24 16:12:51 UTC] epoch=28 lr=0.001600 train_mse=0.057215 val_mae=0.191428 val_mse=0.111281 val_r2=0.742993 vram_reserved_mb=4140.000000
+[2026-11-24 16:13:15 UTC] epoch=29 lr=0.001600 train_mse=0.052921 val_mae=0.247716 val_mse=0.146291 val_r2=0.662138 vram_reserved_mb=4140.000000
+[2026-11-24 16:13:39 UTC] epoch=30 lr=0.001600 train_mse=0.054198 val_mae=0.227490 val_mse=0.122135 val_r2=0.717925 vram_reserved_mb=4140.000000
+[2026-11-24 16:13:39 UTC] finished 30 epochs; best val_mse=0.104356

@@ -1,0 +1,25 @@
+horizons_ms: [10, 25, 50, 100]
+far_max: 0.05
+latency_warmup: 10
+latency_timed: 50
+
+checkpoints:
+  vanilla: "runs/stage2_tokamark/vanilla.pt"
+  itpa: "runs/stage2_tokamark/itpa.pt"
+  mhd_itpa: "runs/stage2_tokamark/mhd_itpa.pt"
+
+data:
+  mast_split: "test"
+  disruption_export_d3d: null
+  disruption_export_cmod: null
+
+model:
+  d_model: 256
+  n_layers: 6
+  n_heads: 8
+  mlp_ratio: 4.0
+  patch_len: 8
+  n_reactor_ctx: 4
+  n_rho: 32
+
+output: "results/ablation.md"

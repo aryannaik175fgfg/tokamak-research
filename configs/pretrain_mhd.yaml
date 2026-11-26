@@ -1,0 +1,38 @@
+device: auto
+amp: false
+
+dataset:
+  well_base_path: "hf://datasets/polymathic-ai/"
+  well_dataset_name: "MHD_64"
+  n_steps_input: 4
+  n_steps_output: 1
+  use_normalization: false
+  batch_size: 1
+  num_workers: 0
+
+model:
+  d_model: 256
+  n_layers: 6
+  n_heads: 8
+  mlp_ratio: 4.0
+  tubelet: [1, 16, 16, 16]
+  n_mach_ctx: 2
+
+loss:
+  lambda_div: 0.1
+  lambda_cont: 0.1
+  lambda_ind: 0.1
+  epsilon: 1.0e-8
+  dt: 0.01
+  dx: 1.0
+
+optim:
+  lr: 3.0e-4
+  weight_decay: 0.01
+  max_steps: 100
+
+log:
+  rollout_steps: 5
+  checkpoint_dir: "runs/stage1_mhd"
+  # HF streaming: keep small so training starts quickly on limited disk/GPU.
+  variance_fit_batches: 5

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "runs\\stage2_ip\\best.pt",
+  "far_max": 0.05,
+  "label_rule": "y < train_q0.20 (0.2119)",
+  "score_rule": "alarm_score = -predicted_Ip (lower prediction => higher alarm)",
+  "note": "Window-level proxy; shot-level FAR needs test_raw_samples.pkl + t_cut.",
+  "splits": {
+    "val": {
+      "n": 2500,
+      "positive_rate": 0.1468,
+      "auroc": 0.8474484901208593,
+      "tpr_at_far": 0.5340599455040872,
+      "fpr_at_operating_point": 0.049695264885138306,
+      "score_threshold": -0.29248046875
+    },
+    "test": {
+      "n": 2420,
+      "positive_rate": 0.12190082644628099,
+      "auroc": 0.8769962113659022,
+      "tpr_at_far": 0.7728813559322034,
+      "fpr_at_operating_point": 0.04988235294117647,
+      "score_threshold": -0.398193359375
+    }
+  }
+}

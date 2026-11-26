@@ -1,0 +1,10 @@
+Disruption-py exports for DIII-D and Alcator C-Mod are not public.
+
+Obtain CSV/parquet from your institution (GA / MIT PSFC) with columns including:
+  shot, time, time_until_disrupt
+
+Place files here, e.g.:
+  data/disruption_exports/d3d_eval.parquet
+  data/disruption_exports/cmod_eval.parquet
+
+Then set paths in data/paths.yaml and configs/eval_cross_machine.yaml.
