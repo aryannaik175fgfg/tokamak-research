@@ -17,6 +17,7 @@ from models.fusion_transformer import FusionTransformer
 from train_stage2_ip import build_ip_dataset, collate_ip, eval_split
 from utils.config import load_config
 from utils.device import configure_cuda_runtime, dataloader_kwargs, resolve_device
+from utils.metrics import nrmse
 
 PAPER_CLEAN = {
     "XGBoost": 0.494,
@@ -24,12 +25,6 @@ PAPER_CLEAN = {
     "Transformer": 0.470,
     "CNN (TokaMark)": 0.528,
 }
-
-
-def nrmse(mse: float, y_std: float) -> float:
-    if y_std < 1e-12:
-        return float("nan")
-    return float(np.sqrt(mse) / y_std)
 
 
 @torch.no_grad()

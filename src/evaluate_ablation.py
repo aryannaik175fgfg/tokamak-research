@@ -119,8 +119,22 @@ def evaluate(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/eval_cross_machine.yaml")
+    parser.add_argument(
+        "--allow-synthetic",
+        action="store_true",
+        help="Score random labels (latency smoke test only; not a scientific result)",
+    )
     add_device_arg(parser)
-    evaluate(parser.parse_args())
+    args = parser.parse_args()
+    if not args.allow_synthetic:
+        raise SystemExit(
+            "Cross-machine disruption eval is not available: DIII-D/C-Mod exports are empty, "
+            "and this script previously scored random labels.\n"
+            "Ip forecast scores: py -3.11 scripts/eval_benchmark_report.py\n"
+            "Shot-level alarms:  py -3.11 scripts/eval_shot_alarms.py\n"
+            "Pass --allow-synthetic only to time the forward pass."
+        )
+    evaluate(args)
 
 
 if __name__ == "__main__":

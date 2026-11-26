@@ -36,7 +36,11 @@ py -3.11 src\train_stage2_ip.py --config configs\train_tokamark_ip.yaml --device
 
 Uses early stopping (`early_stop_patience: 8`), saves only the best val checkpoint.
 
-## What still needs work for “full disruption PCS”
+## What is not a result
+
+`results/ablation.md` used to list AUROC from random labels. That file now says so. `scripts/eval_shot_alarms.py` refuses to invent a shot-level false-alarm rate without `test_raw_samples.pkl`.
+
+## What still needs work for disruption forecasting
 
 | Goal | Status |
 |------|--------|

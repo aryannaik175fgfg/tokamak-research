@@ -150,7 +150,11 @@ def main() -> None:
             "fpr_at_operating_point": fpr,
             "score_threshold": thr,
         }
-        print(f"{split}: pos_rate={labels.mean():.3f} AUROC={auc:.3f} TPR@FAR<{args.far_max}={tpr:.3f} FPR={fpr:.4f} thr={thr:.4f}")
+        print(
+            f"{split} PROXY low-Ip (not a disruption alarm): "
+            f"pos_rate={labels.mean():.3f} AUROC={auc:.3f} "
+            f"TPR@FAR<{args.far_max}={tpr:.3f} FPR={fpr:.4f} thr={thr:.4f}"
+        )
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
